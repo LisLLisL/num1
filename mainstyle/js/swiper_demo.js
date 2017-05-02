@@ -3,6 +3,7 @@ $(function(){
     direction: 'horizontal',
     loop: true,
     pagination: '.swiper-pagination1',
+    autoplay : 5000,
   })
 
   var mySwiper2 = new Swiper ('.swiper-container2', {
@@ -17,11 +18,5 @@ $(function(){
     pagination: '.swiper-pagination3',
 
   })  
-  var mySwiper4 = new Swiper ('.swiper-container4', {
-    direction: 'horizontal',
-    loop: true,
-    pagination: '.swiper-pagination4',
-
-  }) 
 })
        
