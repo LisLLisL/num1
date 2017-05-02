@@ -513,8 +513,8 @@ display: -webkit-box;}
 
 .pop_box{position: relative; }
 .pop_click{display: none;}
-.pop{position: absolute; top: -52px;left: -25%; width: 150%; background: #fff; border:1px solid #cdcdcd;}
-.pop span{ height: 25px !important; line-height: 25px !important; font-size: 12px !important; text-align: center; }
+.pop{position: absolute; top: -72px;left: -25%; width: 150%; background: #fff; border:1px solid #cdcdcd;}
+.pop span{ height: 35px !important; line-height: 35px !important; font-size: 12px !important; text-align: center; }
 .triangle_down1{ width: 0 !important;
     height: 0 !important;
     border-left: 8px solid transparent;
