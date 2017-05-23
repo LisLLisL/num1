@@ -5,7 +5,9 @@
 	<meta charset="utf-8">
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
 	<link rel="stylesheet" type="text/css" href="mainstyle/css/base.css">
+	<link href="mainstyle/css/imgup.css" type="text/css" rel="stylesheet">
 	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
 </head>
 <body>
 <div class="reply-head">发表回复</div>
@@ -13,16 +15,33 @@
 	<div class="reply_top">
 		
 	</div>
-	<textarea placeholder="回复点这里" style="height:80px;width:100%" class="reply_content"></textarea>
-	<div class="reply_bottom_panel clearfix">
+	<textarea placeholder="回复点这里" class="reply_content"></textarea>
+	<!-- <div class="reply_bottom_panel clearfix">
 		<div class="smile_btn_panel">
 			<a class="upload-block">
 				<input class="upload-input" type="file" style="opacity: 0;">
 			</a>
 		</div>
+	</div> -->
+	<div class="img-box full">
+		<section class=" img-section">
+			<div class="z_photo upimg-div clear" >
+					 <section class="z_file fl">
+						<img src="mainstyle/images/a11.png" class="add-img">
+						<input type="file" name="file" id="file" class="file" value="" accept="image/jpg,image/jpeg,image/png,image/bmp" multiple />
+					 </section>
+			 </div>
+		 </section>
 	</div>
+	<aside class="mask works-mask">
+		<div class="mask-content">
+			<p class="del-p ">您确定要删除作品图片吗？</p>
+			<p class="check-p"><span class="del-com wsdel-ok">确定</span><span class="wsdel-no">取消</span></p>
+		</div>
+	</aside>
 </div>
 			
 <a href="javascript:;" class="pager_btn" style="background:#fff;">确认回复</a>
+<script src="mainstyle/js/imgUp.js"></script>
 </body>
 </html>

@@ -737,6 +737,9 @@ display: -webkit-box;}
     margin: 6px 0;
 }
 
+.pbimgwapper img{
+	max-width: 100%;
+}
 
 .reply{
 	position: relative;
@@ -753,8 +756,8 @@ display: -webkit-box;}
 }
 
 .reply_content{
-	max-height: 80px;
-    min-height: 80px;
+	max-height: 150px;
+    min-height: 150px;
     overflow: auto;
     border-width: 0;
     background: #fff;
