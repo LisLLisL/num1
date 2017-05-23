@@ -34,7 +34,7 @@ $(function(){
 					$(".works-mask").show();
 					delParent = $(this).parent();
 				});   
-				$img0.attr("src","img/a7.png").appendTo($section);
+				$img0.attr("src","mainstyle/images/a7.png").appendTo($section);
 		     var $img = $("<img class='up-img up-opcity'>");
 		         $img.attr("src",imgArr[i]);
 		         $img.appendTo($section);
@@ -44,9 +44,17 @@ $(function(){
 		         $input.appendTo($section);
 		     var $input2 = $("<input id='tags' name='tags' value='' type='hidden'/>");
 		         $input2.appendTo($section);
-		      
+
 		   }
 		}
+
+		/*获取下地址试试*/
+		var imgArr=$(".up-img");
+		for(var i=0;i<imgArr.length;i++){
+			console.log(imgArr[i].src);
+		}
+		     
+
 		setTimeout(function(){
              $(".up-section").removeClass("loading");
 		 	 $(".up-img").removeClass("up-opcity");
