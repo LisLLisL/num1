@@ -7,11 +7,15 @@ $(function(){
 		/*点击图片的文本框*/
 		var num=0;
 		var resultid;
+		var file_num
 		
 	$(".file").change(function(){
-		var s=document.getElementById('file').value; 
+		
+		var s=$(".file").val(); 
             if(s!=''){
                num=num+1;
+               file_num="file"+num;
+               $(".file").attr('id',file_num);
             }	 
 		var idFile = $(this).attr("id");
 		var file = document.getElementById(idFile);
