@@ -8,6 +8,35 @@
 	<link href="mainstyle/css/imgup.css" type="text/css" rel="stylesheet">
 	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 
+	<script> 
+    window.onload = function(){ 
+        var input = document.getElementById("demo_input"); 
+        var result= document.getElementById("result"); 
+        var img_area = document.getElementById("img_area"); 
+        if ( typeof(FileReader) === 'undefined' ){
+            result.innerHTML = "±§Ç¸£¬ÄãµÄä¯ÀÀÆ÷²»Ö§³Ö FileReader£¬ÇëÊ¹ÓÃÏÖ´úä¯ÀÀÆ÷²Ù×÷£¡"; 
+            input.setAttribute('disabled','disabled'); 
+        }else{
+            input.addEventListener('change',readFile,false);
+        } 
+    }
+    function readFile(){
+        var file = this.files[0]; 
+        //ÕâÀïÎÒÃÇÅÐ¶ÏÏÂÀàÐÍÈç¹û²»ÊÇÍ¼Æ¬¾Í·µ»Ø È¥µô¾Í¿ÉÒÔÉÏ´«ÈÎÒâÎÄ¼þ   
+        if(!/image\/\w+/.test(file.type)){
+            alert("ÇëÈ·±£ÎÄ¼þÎªÍ¼ÏñÀàÐÍ"); 
+            return false; 
+        }
+        var reader = new FileReader(); 
+        reader.readAsDataURL(file); 
+        console.log();
+        reader.onload = function(e){ 
+                result.innerHTML = this.result; 
+                img_area.innerHTML = '<div class="sitetip">Í¼Æ¬img±êÇ©Õ¹Ê¾£º</div><img src="'+this.result+'" alt=""/>'; 
+        }
+    } 
+	</script>
+
 </head>
 <body>
 <div class="reply-head">发表回复</div>
@@ -16,13 +45,6 @@
 		
 	</div>
 	<textarea placeholder="回复点这里" class="reply_content"></textarea>
-	<!-- <div class="reply_bottom_panel clearfix">
-		<div class="smile_btn_panel">
-			<a class="upload-block">
-				<input class="upload-input" type="file" style="opacity: 0;">
-			</a>
-		</div>
-	</div> -->
 	<div class="img-box full">
 		<section class=" img-section">
 			<div class="z_photo upimg-div clear" >
