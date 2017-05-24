@@ -24,7 +24,7 @@ $(function(){
 		 
 		var aid="file"+num;
 		resultid="result"+num;
-		
+		var img_name="img"+num;
 
 		//遍历得到的图片文件
 		var numUp = imgContainer.find(".up-section").length;
@@ -55,6 +55,7 @@ $(function(){
 		         $img.appendTo($section);
 
 		     var $textarea = $("<textarea name='img' style='display:none'>");
+		     	 $textarea.attr("name",img_name);
 		     	 $textarea.attr("id",resultid);	
 		     	 $textarea.appendTo($section);
 
@@ -92,6 +93,7 @@ $(function(){
 			textarea_id=delParent.children('textarea').attr('id');
 			prev=delParent.prev().children('textarea');
 			prev.attr('id',textarea_id);
+			prev.attr('name',img_name);
 			num=num-1;
 			delParent.parent().find(".z_file").show();
 		}else if(delParent.index()==0){
@@ -99,11 +101,15 @@ $(function(){
 			delParent.parent().find(".z_file").show();
 		}else if(delParent.index()==2){
 			my_id=delParent.children('textarea').attr('id');
+			my_name=delParent.children('textarea').attr('name');
 			prev_id=delParent.prev().children('textarea').attr('id');
+			prev_my_name=delParent.prev().children('textarea').attr('name');
 			prev_prev=delParent.prev().prev().children('textarea');
-			prev_prev.attr('id',prev_id)
+			prev_prev.attr('id',prev_id);
+			prev_prev.attr('name',img_name);
 			prev=delParent.prev().children('textarea');
 			prev.attr('id',my_id);
+			prev.attr('name',img_name);
 			num=num-1;
 			delParent.parent().find(".z_file").show();
 		}
