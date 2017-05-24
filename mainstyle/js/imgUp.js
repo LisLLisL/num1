@@ -5,13 +5,27 @@ $(function(){
 		fileSize         : 1024 * 1024 * 10                  // 上传文件的大小 10M
 	};
 		/*点击图片的文本框*/
-	$(".file").change(function(){	 
+		var num=0;
+		var resultid;
+		
+	$(".file").change(function(){
+		var s=document.getElementById('file').value; 
+            if(s!=''){
+               num=num+1;
+            }	 
 		var idFile = $(this).attr("id");
 		var file = document.getElementById(idFile);
 		var imgContainer = $(this).parents(".z_photo"); //存放图片的父亲元素
 		var fileList = file.files; //获取的图片文件
 		var input = $(this).parent();//文本框的父亲元素
 		var imgArr = [];
+
+		
+		 
+		var aid="file"+num;
+		resultid="result"+num;
+		
+
 		//遍历得到的图片文件
 		var numUp = imgContainer.find(".up-section").length;
 		var totalNum = numUp + fileList.length;  //总的数量
@@ -21,6 +35,7 @@ $(function(){
 		else if(numUp < 3){
 			fileList = validateUp(fileList);
 			for(var i = 0;i<fileList.length;i++){
+			
 			 var imgUrl = window.URL.createObjectURL(fileList[i]);
 			     imgArr.push(imgUrl);
 			 var $section = $("<section class='up-section fl loading'>");
@@ -38,22 +53,20 @@ $(function(){
 		     var $img = $("<img class='up-img up-opcity'>");
 		         $img.attr("src",imgArr[i]);
 		         $img.appendTo($section);
+
+		     var $textarea = $("<textarea name='img' style='display:none'>");
+		     	 $textarea.attr("id",resultid);	
+		     	 $textarea.appendTo($section);
+
 		     var $p = $("<p class='img-name-p'>");
 		         $p.html(fileList[i].name).appendTo($section);
 		     var $input = $("<input id='taglocation' name='taglocation' value='' type='hidden'>");
+		    	 $input.attr("id",aid);
 		         $input.appendTo($section);
 		     var $input2 = $("<input id='tags' name='tags' value='' type='hidden'/>");
 		         $input2.appendTo($section);
-
 		   }
 		}
-
-		/*获取下地址试试*/
-		var imgArr=$(".up-img");
-		for(var i=0;i<imgArr.length;i++){
-			console.log(imgArr[i].src);
-		}
-		     
 
 		setTimeout(function(){
              $(".up-section").removeClass("loading");
@@ -74,10 +87,31 @@ $(function(){
 		
 	$(".wsdel-ok").click(function(){
 		$(".works-mask").hide();
-		var numUp = delParent.siblings().length;
-		if(numUp < 6){
+
+		if(delParent.index()==1){
+			textarea_id=delParent.children('textarea').attr('id');
+			prev=delParent.prev().children('textarea');
+			prev.attr('id',textarea_id);
+			num=num-1;
+			delParent.parent().find(".z_file").show();
+		}else if(delParent.index()==0){
+			num=num-1;
+			delParent.parent().find(".z_file").show();
+		}else if(delParent.index()==2){
+			my_id=delParent.children('textarea').attr('id');
+			prev_id=delParent.prev().children('textarea').attr('id');
+			prev_prev=delParent.prev().prev().children('textarea');
+			prev_prev.attr('id',prev_id)
+			prev=delParent.prev().children('textarea');
+			prev.attr('id',my_id);
+			num=num-1;
 			delParent.parent().find(".z_file").show();
 		}
+
+		// var numUp = delParent.siblings().length;
+		// if(numUp < 3){
+		// 	delParent.parent().find(".z_file").show();
+		// }
 		 delParent.remove();
 	});
 	
