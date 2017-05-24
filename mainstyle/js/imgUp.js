@@ -91,9 +91,10 @@ $(function(){
 
 		if(delParent.index()==1){
 			textarea_id=delParent.children('textarea').attr('id');
+			textarea_name=delParent.children('textarea').attr('name');
 			prev=delParent.prev().children('textarea');
 			prev.attr('id',textarea_id);
-			prev.attr('name',img_name);
+			prev.attr('name',textarea_name);
 			num=num-1;
 			delParent.parent().find(".z_file").show();
 		}else if(delParent.index()==0){
@@ -106,10 +107,10 @@ $(function(){
 			prev_my_name=delParent.prev().children('textarea').attr('name');
 			prev_prev=delParent.prev().prev().children('textarea');
 			prev_prev.attr('id',prev_id);
-			prev_prev.attr('name',img_name);
+			prev_prev.attr('name',prev_my_name);
 			prev=delParent.prev().children('textarea');
 			prev.attr('id',my_id);
-			prev.attr('name',img_name);
+			prev.attr('name',my_name);
 			num=num-1;
 			delParent.parent().find(".z_file").show();
 		}
