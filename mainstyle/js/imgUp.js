@@ -8,13 +8,34 @@ $(function(){
 		var num=0;
 		var resultid;
 		var file_num
+
+
+		var arr_base=[]  
 		
 	$(".file").change(function(){
 		
 		var s=$(".file").val(); 
+
             if(s!=''){
-               num=num+1;
-            }	 
+               
+                var file = this.files[0];
+
+                if(window.FileReader) {  
+
+                    var fr = new FileReader();  
+                    fr.onloadend = function(e) {  
+                        arr_base.push( e.target.result);
+                        console.log(arr_base);
+                    };  
+                    fr.readAsDataURL(file)
+                }else{
+                	console.log("not supported");
+                }
+                num=num+1; 
+            }    
+
+
+
 		var idFile = $(this).attr("id");
 		var file = document.getElementById(idFile);
 		var imgContainer = $(this).parents(".z_photo"); //存放图片的父亲元素
@@ -97,9 +118,13 @@ $(function(){
 			prev=delParent.prev().children('textarea');
 			prev.attr('id',textarea_id);
 			prev.attr('name',textarea_name);
+			arr_base.splice(1,1);
+			console.log(arr_base);
 			num=num-1;
 			delParent.parent().find(".z_file").show();
 		}else if(delParent.index()==0){
+			arr_base.splice(2,1);
+			console.log(arr_base);
 			num=num-1;
 			delParent.parent().find(".z_file").show();
 		}else if(delParent.index()==2){
@@ -113,6 +138,8 @@ $(function(){
 			prev=delParent.prev().children('textarea');
 			prev.attr('id',my_id);
 			prev.attr('name',my_name);
+			arr_base.splice(0,1);
+			console.log(arr_base);
 			num=num-1;
 			delParent.parent().find(".z_file").show();
 		}
@@ -159,8 +186,8 @@ $(function(){
 	$('.pager_btn').click(function(){
 		var imgObjects=$(".up-img");
 		for(var i=0;i<imgObjects.length;i++){
-			console.log(imgObjects[i].src);
-			$(".up-section textarea")[i].innerHTML=imgObjects[i].src;
+			console.log(arr_base[i]);
+			$(".up-section textarea")[i].innerHTML=arr_base[i];
 		   
 		}
 	})
