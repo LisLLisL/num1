@@ -25,7 +25,7 @@ $(function(){
                     var fr = new FileReader();  
                     fr.onloadend = function(e) {  
                         arr_base.push( e.target.result);
-                        console.log(arr_base);
+                        // console.log(arr_base);
                     };  
                     fr.readAsDataURL(file)
                 }else{
@@ -119,12 +119,12 @@ $(function(){
 			prev.attr('id',textarea_id);
 			prev.attr('name',textarea_name);
 			arr_base.splice(1,1);
-			console.log(arr_base);
+			// console.log(arr_base);
 			num=num-1;
 			delParent.parent().find(".z_file").show();
 		}else if(delParent.index()==0){
 			arr_base.splice(2,1);
-			console.log(arr_base);
+			// console.log(arr_base);
 			num=num-1;
 			delParent.parent().find(".z_file").show();
 		}else if(delParent.index()==2){
@@ -139,7 +139,7 @@ $(function(){
 			prev.attr('id',my_id);
 			prev.attr('name',my_name);
 			arr_base.splice(0,1);
-			console.log(arr_base);
+			// console.log(arr_base);
 			num=num-1;
 			delParent.parent().find(".z_file").show();
 		}
@@ -186,7 +186,7 @@ $(function(){
 	$('.pager_btn').click(function(){
 		var imgObjects=$(".up-img");
 		for(var i=0;i<imgObjects.length;i++){
-			console.log(arr_base[i]);
+			// console.log(arr_base[i]);
 			$(".up-section textarea")[i].innerHTML=arr_base[i];
 		   
 		}
