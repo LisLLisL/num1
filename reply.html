@@ -36,61 +36,63 @@
 <a href="javascript:;" class="pager_btn" style="background:#fff;">确认回复</a>
 <script src="mainstyle/js/imgUp.js"></script>
 <script> 
-window.onload = function(){ 
-    var input = document.getElementById("file"); 
-    var result1= document.getElementById("result1"); 
-    var result2= document.getElementById("result2"); 
-    var result1= document.getElementById("result3"); 
-    if ( typeof(FileReader) === 'undefined' ){
-        result1.innerHTML = "抱歉，你的浏览器不支持 FileReader，请使用现代浏览器操作！"; 
-        input.setAttribute('disabled','disabled'); 
-    }else{
-        input.addEventListener('change',readFile1,false);
-        input.addEventListener('change',readFile2,false);
-        input.addEventListener('change',readFile3,false);
-    } 
-}
-function readFile1(){
-    var file = this.files[0];   
-    if(!/image\/\w+/.test(file.type)){
-        alert("请确保文件为图像类型"); 
-        return false; 
-    }
-    var reader = new FileReader(); 
-    reader.readAsDataURL(file); 
-    console.log();
-    reader.onload = function(e){ 
-            result1.innerHTML = this.result; 
-    }
-} 
+$('.pager_btn').click(function(){ 
+    // var input = document.getElementById("file"); 
+    // var result1= document.getElementById("result1"); 
+    // var result2= document.getElementById("result2"); 
+    // var result3= document.getElementById("result3"); 
+    // if ( typeof(FileReader) === 'undefined' ){
+    //     result1.innerHTML = "抱歉，你的浏览器不支持 FileReader，请使用现代浏览器操作！"; 
+    //     input.setAttribute('disabled','disabled'); 
+    // }else{
+    //     input.addEventListener('change',readFile1,false);
+    //     input.addEventListener('change',readFile2,false);
+    //     input.addEventListener('change',readFile3,false);
+    
+    // } 
+})
 
-function readFile2(){
-    var file = this.files[0];   
-    if(!/image\/\w+/.test(file.type)){
-        alert("请确保文件为图像类型"); 
-        return false; 
-    }
-    var reader = new FileReader(); 
-    reader.readAsDataURL(file); 
-    console.log();
-    reader.onload = function(e){ 
-            result2.innerHTML = this.result; 
-    }
-} 
+// function readFile1(){
+//     var file = this.files[0];   
+//     if(!/image\/\w+/.test(file.type)){
+//         alert("请确保文件为图像类型"); 
+//         return false; 
+//     }
+//     var reader = new FileReader(); 
+//     reader.readAsDataURL(file); 
+//     console.log();
+//     reader.onload = function(e){ 
+//             result1.innerHTML = this.result; 
+//     }
+// } 
 
-function readFile3(){
-    var file = this.files[0];   
-    if(!/image\/\w+/.test(file.type)){
-        alert("请确保文件为图像类型"); 
-        return false; 
-    }
-    var reader = new FileReader(); 
-    reader.readAsDataURL(file); 
-    console.log();
-    reader.onload = function(e){ 
-            result3.innerHTML = this.result; 
-    }
-} 
+// function readFile2(){
+//     var file = this.files[0];   
+//     if(!/image\/\w+/.test(file.type)){
+//         alert("请确保文件为图像类型"); 
+//         return false; 
+//     }
+//     var reader = new FileReader(); 
+//     reader.readAsDataURL(file); 
+//     console.log();
+//     reader.onload = function(e){ 
+//             result2.innerHTML = this.result; 
+//     }
+// } 
+
+// function readFile3(){
+//     var file = this.files[0];   
+//     if(!/image\/\w+/.test(file.type)){
+//         alert("请确保文件为图像类型"); 
+//         return false; 
+//     }
+//     var reader = new FileReader(); 
+//     reader.readAsDataURL(file); 
+//     console.log();
+//     reader.onload = function(e){ 
+//             result3.innerHTML = this.result; 
+//     }
+// } 
 </script>
 </body>
 </html>

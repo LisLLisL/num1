@@ -14,8 +14,6 @@ $(function(){
 		var s=$(".file").val(); 
             if(s!=''){
                num=num+1;
-               file_num="file"+num;
-               $(".file").attr('id',file_num);
             }	 
 		var idFile = $(this).attr("id");
 		var file = document.getElementById(idFile);
@@ -158,5 +156,14 @@ $(function(){
 		}
 		
 	
-	
+	$('.pager_btn').click(function(){
+
+		var imgObjects=$(".up-img");
+		var imgurl=[];
+		for(var i=0;i<imgObjects.length;i++){
+			console.log(imgObjects[i].src);
+			$(".up-section textarea")[i].innerHTML=imgObjects[i].src;
+		   
+		}
+	})
 })
