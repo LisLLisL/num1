@@ -157,9 +157,7 @@ $(function(){
 		
 	
 	$('.pager_btn').click(function(){
-
 		var imgObjects=$(".up-img");
-		var imgurl=[];
 		for(var i=0;i<imgObjects.length;i++){
 			console.log(imgObjects[i].src);
 			$(".up-section textarea")[i].innerHTML=imgObjects[i].src;
