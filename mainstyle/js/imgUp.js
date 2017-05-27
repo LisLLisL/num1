@@ -11,31 +11,9 @@ $(function(){
 
 
 		var arr_base=[]  
-		
+		var alen;
+
 	$(".file").change(function(){
-		
-		var s=$(".file").val(); 
-
-            if(s!=''){
-               
-                var file = this.files[0];
-
-                if(window.FileReader) {  
-
-                    var fr = new FileReader();  
-                    fr.onloadend = function(e) {  
-                        arr_base.push( e.target.result);
-                        // console.log(arr_base);
-                    };  
-                    fr.readAsDataURL(file)
-                }else{
-                	console.log("not supported");
-                }
-                num=num+1; 
-            }    
-
-
-
 		var idFile = $(this).attr("id");
 		var file = document.getElementById(idFile);
 		var imgContainer = $(this).parents(".z_photo"); //存放图片的父亲元素
@@ -52,6 +30,38 @@ $(function(){
 		//遍历得到的图片文件
 		var numUp = imgContainer.find(".up-section").length;
 		var totalNum = numUp + fileList.length;  //总的数量
+
+		var s=$(".file").val(); 
+		
+            if(s!=''){
+               	lrz(this.files[0], {width: 640})
+                .then(function (rst) {
+                
+                    // console.log(rst.base64);
+                    arr_base.push(rst.base64);
+                    console.log(arr_base);
+                });
+
+
+                // var file = this.files[0];
+
+                // if(window.FileReader) {  
+
+                //     var fr = new FileReader();  
+                //     fr.onloadend = function(e) {  
+                //         arr_base.push( e.target.result);
+                //         // console.log(arr_base);
+                //     };  
+                //     fr.readAsDataURL(file)
+                // }else{
+                // 	console.log("not supported");
+                // }
+                num=num+1; 
+            }    
+
+
+
+		
 		if(fileList.length > 3 || totalNum > 3 ){
 			alert("上传图片数目不可以超过3个，请重新选择");  //一次选择上传超过5个 或者是已经上传和这次上传的到的总数也不可以超过5个
 		}
@@ -89,6 +99,8 @@ $(function(){
 		         $input.appendTo($section);
 		     var $input2 = $("<input id='tags' name='tags' value='' type='hidden'/>");
 		         $input2.appendTo($section);
+
+
 		   }
 		}
 
@@ -111,6 +123,7 @@ $(function(){
 		
 	$(".wsdel-ok").click(function(){
 		$(".works-mask").hide();
+		alen=$(".up-section").length;
 
 		if(delParent.index()==1){
 			textarea_id=delParent.children('textarea').attr('id');
@@ -118,12 +131,12 @@ $(function(){
 			prev=delParent.prev().children('textarea');
 			prev.attr('id',textarea_id);
 			prev.attr('name',textarea_name);
-			arr_base.splice(1,1);
+			arr_base.splice(alen-2,1);
 			// console.log(arr_base);
 			num=num-1;
 			delParent.parent().find(".z_file").show();
 		}else if(delParent.index()==0){
-			arr_base.splice(2,1);
+			arr_base.splice(alen-1,1);
 			// console.log(arr_base);
 			num=num-1;
 			delParent.parent().find(".z_file").show();
@@ -148,7 +161,10 @@ $(function(){
 		// if(numUp < 3){
 		// 	delParent.parent().find(".z_file").show();
 		// }
+		 
 		 delParent.remove();
+		 alen=$(".up-section").length;
+		 // alert(alen);
 	});
 	
 	$(".wsdel-no").click(function(){
@@ -186,7 +202,7 @@ $(function(){
 	$('.pager_btn').click(function(){
 		var imgObjects=$(".up-img");
 		for(var i=0;i<imgObjects.length;i++){
-			// console.log(arr_base[i]);
+			console.log(arr_base[i]);
 			$(".up-section textarea")[i].innerHTML=arr_base[i];
 		   
 		}
