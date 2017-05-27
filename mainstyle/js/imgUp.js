@@ -34,9 +34,16 @@ $(function(){
 		var s=$(".file").val(); 
 		
             if(s!=''){
-               	lrz(this.files[0], {width: 640,quality:1})
+               	lrz(this.files[0], {width: 640})
                 .then(function (rst) {
-                
+                	
+                	 var img = new Image();
+				    img.src = rst.base64; //base64字符串
+
+				    img.onload = function () {
+				        document.body.appendChild(img);
+				    };
+                	
                     // console.log(rst.base64);
                     arr_base.push(rst.base64);
                     // console.log(arr_base);
@@ -199,12 +206,12 @@ $(function(){
 		}
 		
 	
-	// $('.pager_btn').click(function(){
-	// 	var imgObjects=$(".up-img");
-	// 	for(var i=0;i<imgObjects.length;i++){
-	// 		console.log(arr_base[i]);
-	// 		$(".up-section textarea")[i].innerHTML=arr_base[i];
+	$('.pager_btn').click(function(){
+		var imgObjects=$(".up-img");
+		for(var i=0;i<imgObjects.length;i++){
+			console.log(arr_base[i]);
+			$(".up-section textarea")[i].innerHTML=arr_base[i];
 		   
-	// 	}
-	// })
+		}
+	})
 })
