@@ -32,13 +32,12 @@ $(function(){
 		var totalNum = numUp + fileList.length;  //总的数量
 
 		var s=$(".file").val(); 
-		
             if(s!=''){
                	lrz(this.files[0], {width: 640})
                 .then(function (rst) {
 
-                    // console.log(rst.base64);
-                    arr_base.push(rst.base64);
+                    // console.log(rst);
+                    arr_base.push(rst.base64Len);
                     console.log(arr_base);
                 });
 
