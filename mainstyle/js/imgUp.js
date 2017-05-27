@@ -36,9 +36,9 @@ $(function(){
                	lrz(this.files[0], {width: 640})
                 .then(function (rst) {
 
-                    // console.log(rst);
+                    console.log(rst);
                     arr_base.push(rst.base64);
-                    console.log(arr_base);
+                    // console.log(arr_base);
                 });
 
 
@@ -86,7 +86,7 @@ $(function(){
 		         $img.attr("src",imgArr[i]);
 		         $img.appendTo($section);
 
-		     var $textarea = $("<textarea name='img' style='display:none'>");
+		     var $textarea = $("<textarea name='img' style='display:block'>");
 		     	 $textarea.attr("name",img_name);
 		     	 $textarea.attr("id",resultid);	
 		     	 $textarea.appendTo($section);
