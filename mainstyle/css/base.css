@@ -818,3 +818,8 @@ display: -webkit-box;}
     opacity: 0;
     font-size: 30px;
 }
+
+/*user_select*/
+.select_top{font-size: 16px; line-height: 30px;text-align: center; padding:15px 10%; border-bottom: 1px solid #999; background-color: #E71F19; color: #fff; }
+
+.select_tag{ width: 80%; background: #fff; height: 40px; line-height: 40px; color: gray; border: 1px solid gray; text-align: center; margin: 20px auto;font-size: 16px; }
