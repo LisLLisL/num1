@@ -34,12 +34,12 @@ $(function(){
 		var s=$(".file").val(); 
 		
             if(s!=''){
-               	lrz(this.files[0], {width: 2000})
+               	lrz(this.files[0], {width: 640})
                 .then(function (rst) {
                 
                     // console.log(rst.base64);
                     arr_base.push(rst.base64);
-                    console.log(arr_base);
+                    // console.log(arr_base);
                 });
 
 
@@ -199,12 +199,12 @@ $(function(){
 		}
 		
 	
-	$('.pager_btn').click(function(){
-		var imgObjects=$(".up-img");
-		for(var i=0;i<imgObjects.length;i++){
-			console.log(arr_base[i]);
-			$(".up-section textarea")[i].innerHTML=arr_base[i];
+	// $('.pager_btn').click(function(){
+	// 	var imgObjects=$(".up-img");
+	// 	for(var i=0;i<imgObjects.length;i++){
+	// 		console.log(arr_base[i]);
+	// 		$(".up-section textarea")[i].innerHTML=arr_base[i];
 		   
-		}
-	})
+	// 	}
+	// })
 })
