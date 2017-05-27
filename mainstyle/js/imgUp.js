@@ -34,7 +34,7 @@ $(function(){
 		var s=$(".file").val(); 
 		
             if(s!=''){
-               	lrz(this.files[0], {width: 640})
+               	lrz(this.files[0], {width: 640,quality:1})
                 .then(function (rst) {
                 
                     // console.log(rst.base64);
