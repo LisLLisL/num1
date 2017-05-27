@@ -34,12 +34,12 @@ $(function(){
 		var s=$(".file").val(); 
 		
             if(s!=''){
-               	lrz(this.files[0], {width: 640})
+               	lrz(this.files[0], {width: 200})
                 .then(function (rst) {
                 
                     // console.log(rst.base64);
-                    arr_base.push(rst.file.base64);
-                    // console.log(arr_base);
+                    arr_base.push(rst.base64);
+                    console.log(arr_base);
                 });
 
 
