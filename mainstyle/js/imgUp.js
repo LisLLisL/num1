@@ -37,7 +37,7 @@ $(function(){
                 .then(function (rst) {
 
                     // console.log(rst);
-                    arr_base.push(rst.base64Len);
+                    arr_base.push(rst.base64);
                     console.log(arr_base);
                 });
 
