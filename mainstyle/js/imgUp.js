@@ -10,7 +10,7 @@ $(function(){
 		var file_num
 
 
-	  
+		var arr_base=[]  
 		var alen;
 
 	$(".file").change(function(){
@@ -20,7 +20,7 @@ $(function(){
 		var fileList = file.files; //获取的图片文件
 		var input = $(this).parent();//文本框的父亲元素
 		var imgArr = [];
-		 arr_base=new Array();
+
 		
 		 
 		var aid="file"+num;
@@ -30,36 +30,46 @@ $(function(){
 		//遍历得到的图片文件
 		var numUp = imgContainer.find(".up-section").length;
 		var totalNum = numUp + fileList.length;  //总的数量
-		
 
 		var s=$(".file").val(); 
             if(s!=''){
                	lrz(this.files[0], {width: 640})
                 .then(function (rst) {
 
-                	
-
-                    // arr_base[num]=rst.base64;
+                    console.log(rst);
+                    arr_base.push(rst.base64);
                     // console.log(arr_base);
-                     // console.log(img);
-
                 });
-                
+
+
+                // var file = this.files[0];
+
+                // if(window.FileReader) {  
+
+                //     var fr = new FileReader();  
+                //     fr.onloadend = function(e) {  
+                //         arr_base.push( e.target.result);
+                //         // console.log(arr_base);
+                //     };  
+                //     fr.readAsDataURL(file)
+                // }else{
+                // 	console.log("not supported");
+                // }
                 num=num+1; 
             }    
 
 
-		// alert(arr_base[0]);
+
+		
 		if(fileList.length > 3 || totalNum > 3 ){
 			alert("上传图片数目不可以超过3个，请重新选择");  //一次选择上传超过5个 或者是已经上传和这次上传的到的总数也不可以超过5个
 		}
 		else if(numUp < 3){
-			
 			fileList = validateUp(fileList);
 			for(var i = 0;i<fileList.length;i++){
 			
-			 // var imgUrl = window.URL.createObjectURL(fileList[i]);
-			 //     imgArr.push(imgUrl);
+			 var imgUrl = window.URL.createObjectURL(fileList[i]);
+			     imgArr.push(imgUrl);
 			 var $section = $("<section class='up-section fl loading'>");
 			     imgContainer.prepend($section);
 			 var $span = $("<span class='up-span'>");
@@ -73,7 +83,7 @@ $(function(){
 				});   
 				$img0.attr("src","mainstyle/images/a7.png").appendTo($section);
 		     var $img = $("<img class='up-img up-opcity'>");
-		         $img.attr("src",arr_base[i]);
+		         $img.attr("src",imgArr[i]);
 		         $img.appendTo($section);
 
 		     var $textarea = $("<textarea name='img' style='display:block'>");
