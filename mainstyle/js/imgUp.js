@@ -38,8 +38,8 @@ $(function(){
                 .then(function (rst) {
                 
                     // console.log(rst.base64);
-                    arr_base.push(rst.base64);
-                    console.log(arr_base);
+                    arr_base.push(rst.file.base64);
+                    // console.log(arr_base);
                 });
 
 
