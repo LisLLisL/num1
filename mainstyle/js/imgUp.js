@@ -36,17 +36,10 @@ $(function(){
             if(s!=''){
                	lrz(this.files[0], {width: 640})
                 .then(function (rst) {
-                	
-                	 var img = new Image();
-				    img.src = rst.base64; //base64字符串
 
-				    img.onload = function () {
-				        document.body.appendChild(img);
-				    };
-                	
                     // console.log(rst.base64);
                     arr_base.push(rst.base64);
-                    // console.log(arr_base);
+                    console.log(arr_base);
                 });
 
 
@@ -139,12 +132,12 @@ $(function(){
 			prev.attr('id',textarea_id);
 			prev.attr('name',textarea_name);
 			arr_base.splice(alen-2,1);
-			// console.log(arr_base);
+			console.log(arr_base);
 			num=num-1;
 			delParent.parent().find(".z_file").show();
 		}else if(delParent.index()==0){
 			arr_base.splice(alen-1,1);
-			// console.log(arr_base);
+			console.log(arr_base);
 			num=num-1;
 			delParent.parent().find(".z_file").show();
 		}else if(delParent.index()==2){
@@ -159,7 +152,7 @@ $(function(){
 			prev.attr('id',my_id);
 			prev.attr('name',my_name);
 			arr_base.splice(0,1);
-			// console.log(arr_base);
+			console.log(arr_base);
 			num=num-1;
 			delParent.parent().find(".z_file").show();
 		}
