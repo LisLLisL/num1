@@ -819,6 +819,102 @@ display: -webkit-box;}
     font-size: 30px;
 }
 
+
+/*价格计算页面*/
+.cal_wrapper{ 
+	margin: 20px;
+	background-color: #fff;
+    border: 1px solid transparent;
+    border-color: #ddd;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+
+.cal_top{
+	color: #333;
+    background-color: #f5f5f5;
+    border-color: #ddd;
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.cal_bottom{
+	padding:15px 0;
+}
+
+.input_wrapper{
+	overflow:hidden;
+	padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+}
+
+.input_head{ 
+	float: left;
+	font-size: 14px;
+    line-height: 34px;
+    text-align: left;
+    padding-right: 15px;
+}
+
+.input_box{
+	float: left;
+	font-size: 14px;
+    line-height: 34px;
+    border: 1px solid transparent;
+    border-color: #ddd;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+
+}
+
+.input_box input{
+	border:none;
+	width: 100px;
+	padding: 6px 12px;
+}
+
+.input_add{
+	padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    color: #555;
+    text-align: center;
+    border-left: 1px solid #ccc;
+}
+
+.input_box select{
+	border: none;
+	padding: 6px 12px;
+	font-weight: 400;
+    line-height: 1;
+    color: #555;
+    text-align: center;
+}
+
+.button_start{
+	background: #53a0e3 none repeat scroll 0 0;
+    border: 0 none;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    margin: 20px 12px 6px;
+    outline: 0 none;
+    text-align: center;
+    width: 90px;
+}
 /*user_select*/
 .select_top{font-size: 16px; line-height: 30px;text-align: center; padding:15px 10%; border-bottom: 1px solid #999; background-color: #E71F19; color: #fff; }
 
