@@ -14,26 +14,26 @@
 		<div class="input_wrapper">
 			<div class="input_head">装修面积</div>
 			<div class="input_box">
-				<input>
+				<input id="num">
 				<span class="input_add">平米</span>
 			</div>
 		</div>
 		<div class="input_wrapper">
 			<div class="input_head">装修方式</div>
 			<div class="input_box">
-				<select>
-				  <option value ="半包装修">半包装修</option>
-				  <option value ="全包装修">全包装修</option>
+				<select id="select1">
+				  <option value ="1">半包装修</option>
+				  <option value ="2">全包装修</option>
 				</select>
 			</div>
 		</div>
 		<div class="input_wrapper">
 			<div class="input_head">装修类型</div>
 			<div class="input_box">
-				<select>
-				  <option value ="半包装修">经济型</option>
-				  <option value ="全包装修">优雅型</option>
-				  <option value ="全包装修">豪华型</option>
+				<select id="select2">
+				  <option value ="1">经济型</option>
+				  <option value ="2">优雅型</option>
+				  <option value ="3">豪华型</option>
 				</select>
 			</div>
 		</div>
@@ -41,14 +41,43 @@
 		<div class="input_wrapper">
 			<div class="input_head">应付金额</div>
 			<div class="input_box">
-				<input>
+				<input id="price">
 				<span class="input_add">元</span>
 			</div>
 		</div>
-		<div class="button_start">
+		<div id="button_start" class="button_start">
 			计算
 		</div>
 	</div>
 </div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#button_start").click(function(){
+			var num=$("#num").val();
+			var select1=$("#select1").val();
+			var select2=$("#select2").val();
+			var price;
+			if(select1=="1"&&select2=="1"){
+				price=num*600;
+			}
+			else if(select1=="1"&&select2=="2"){
+				price=num*700;
+			}
+			else if(select1=="1"&&select2=="3"){
+				price=num*800;
+			}
+			else if(select1=="2"&&select2=="1"){
+				price=num*1000;
+			}
+			else if(select1=="2"&&select2=="2"){
+				price=num*1200;
+			}
+			else if(select1=="2"&&select2=="3"){
+				price=num*1800;
+			}
+			$("#price").val(price);
+		});
+	})
+</script>
 </body>
 </html>
