@@ -864,6 +864,7 @@ display: -webkit-box;}
     line-height: 34px;
     text-align: left;
     padding-right: 15px;
+	min-width: 56px;
 }
 
 .input_box{
