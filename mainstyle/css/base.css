@@ -885,6 +885,24 @@ display: -webkit-box;}
 	border:none;
 	width: 100px;
 	padding: 6px 12px;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	-o-text-overflow:ellipsis; 
+	overflow:hidden;
+}
+
+.house_address{
+	float: left;
+	border:none;
+	width: 180px;
+	padding: 6px 12px;
+	border: 1px solid transparent;
+    border-color: #ddd;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    min-height: 22px;
+	
 }
 
 .input_add{
