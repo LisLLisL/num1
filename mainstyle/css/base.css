@@ -844,10 +844,12 @@ display: -webkit-box;}
     border-bottom: 1px solid transparent;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
+    text-align: center;
 }
 
 .cal_bottom{
 	padding:15px 0;
+	overflow:hidden;
 }
 
 .input_wrapper{
@@ -919,5 +921,5 @@ display: -webkit-box;}
     margin: 20px 12px 6px;
     outline: 0 none;
     text-align: center;
-    width: 90px;
+    width: 120px;
 }
