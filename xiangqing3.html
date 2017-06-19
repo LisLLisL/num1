@@ -1,31 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
         <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
         <title>jQuery lightGallery demo</title>
         <link rel="stylesheet" type="text/css" href="mainstyle/css/base.css">
         <link href="https://cdn.rawgit.com/sachinchoolur/lightgallery.js/master/dist/css/lightgallery.css" rel="stylesheet">
+        <link rel="stylesheet" href="mainstyle/css/news.css">
         
     </head>
     <body class="home">
-        <ul id="ul-li">
-          <li data-src="mainstyle/images/20170504023907904.jpg">
-              <img src="mainstyle/images/20170504023907904.jpg"/>
-          </li>
-          <li data-src="mainstyle/images/20170504023907904.jpg">
-              <img src="mainstyle/images/20170504023907904.jpg"/>
-          </li>
-        </ul>
-        <script src="https://cdn.jsdelivr.net/picturefill/2.3.1/picturefill.min.js"></script>
-        <script src="https://cdn.rawgit.com/sachinchoolur/lightgallery.js/master/dist/js/lightgallery.js"></script>
-        <script src="https://cdn.rawgit.com/sachinchoolur/lg-pager.js/master/dist/lg-pager.js"></script>
-        <script src="https://cdn.rawgit.com/sachinchoolur/lg-autoplay.js/master/dist/lg-autoplay.js"></script>
-        <script src="https://cdn.rawgit.com/sachinchoolur/lg-fullscreen.js/master/dist/lg-fullscreen.js"></script>
-        <script src="https://cdn.rawgit.com/sachinchoolur/lg-zoom.js/master/dist/lg-zoom.js"></script>
-        <script src="https://cdn.rawgit.com/sachinchoolur/lg-hash.js/master/dist/lg-hash.js"></script>
-        <script src="https://cdn.rawgit.com/sachinchoolur/lg-share.js/master/dist/lg-share.js"></script>
-        <script>
-            lightGallery(document.getElementById('ul-li'));
-        </script>
+    <div id="main" style="overflow: hidden;">
+        <div id="scroller" style="transition-property: transform; transform-origin: 0px 0px 0px; transform: translate(0px, -234px) scale(1) translateZ(0px);">
+            <div class="caption">
+                <a name="top" id="top"></a>
+                <font id="guide"></font>
+                <font id="main-title">23433333333</font>                
+                <font id="sub-title"></font>
+                <font id="author"></font>
+            </div>
+            <div class="content" id="content">
+            &nbsp;&nbsp;&nbsp;&nbsp;新浪科技讯 5月4日下午消息，百度公司董事长兼CEO李彦宏今日通过内网发布全员信，信中谈到了百度公司的新使命：用科技让复杂的世界更简单。此前，百度创立以来的公司使命是：让人们最平等便捷地获取信息找到所求。<br>&nbsp;&nbsp;李彦宏称，这是百度创立的第17年。这17年来，依靠“让人们最平等便捷地获取信息找到所求”的公司使命，百度立足搜索，“不仅有能力看到这些原本费时费力、繁琐复杂的事情，有机会变得简单起来，我们更有能力、有责任让这些原本看起来不可能的事情，真正变为可能！”<br> 
+            <ul id="ul-li">
+              <li data-src="mainstyle/images/20170504023907904.jpg">
+                  <img src="mainstyle/images/20170504023907904.jpg"/>
+              </li>
+              <li data-src="mainstyle/images/20170504023907904.jpg">
+                  <img src="mainstyle/images/20170504023907904.jpg"/>
+              </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="mainstyle/js/jquery.min.js"></script>
+    <script src="mainstyle/js/jquery.mobile.custom.min.js"></script>
+    <script src="mainstyle/js/iscroll.js"></script>
+    <script src="mainstyle/js/simple-share.min.js"></script>
+    <script src="mainstyle/js/news.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/picturefill/2.3.1/picturefill.min.js"></script>
+    <script src="https://cdn.rawgit.com/sachinchoolur/lightgallery.js/master/dist/js/lightgallery.js"></script>
+    <script src="https://cdn.rawgit.com/sachinchoolur/lg-pager.js/master/dist/lg-pager.js"></script>
+    <script src="https://cdn.rawgit.com/sachinchoolur/lg-autoplay.js/master/dist/lg-autoplay.js"></script>
+    <script src="https://cdn.rawgit.com/sachinchoolur/lg-fullscreen.js/master/dist/lg-fullscreen.js"></script>
+    <script src="https://cdn.rawgit.com/sachinchoolur/lg-zoom.js/master/dist/lg-zoom.js"></script>
+    <script src="https://cdn.rawgit.com/sachinchoolur/lg-hash.js/master/dist/lg-hash.js"></script>
+    <script src="https://cdn.rawgit.com/sachinchoolur/lg-share.js/master/dist/lg-share.js"></script>
+    <script>
+        lightGallery(document.getElementById('ul-li'));
+    </script>
     </body>
 </html>
