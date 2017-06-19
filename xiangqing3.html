@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery lightGallery demo</title>
+        <link rel="stylesheet" type="text/css" href="mainstyle/css/base.css">
+        <link href="https://cdn.rawgit.com/sachinchoolur/lightgallery.js/master/dist/css/lightgallery.css" rel="stylesheet">
+        
+    </head>
+    <body class="home">
+        <ul id="ul-li">
+          <li data-src="mainstyle/images/20170504023907904.jpg">
+              <img src="mainstyle/images/20170504023907904.jpg"/>
+          </li>
+          <li data-src="mainstyle/images/20170504023907904.jpg">
+              <img src="mainstyle/images/20170504023907904.jpg"/>
+          </li>
+        </ul>
+        <script src="https://cdn.jsdelivr.net/picturefill/2.3.1/picturefill.min.js"></script>
+        <script src="https://cdn.rawgit.com/sachinchoolur/lightgallery.js/master/dist/js/lightgallery.js"></script>
+        <script src="https://cdn.rawgit.com/sachinchoolur/lg-pager.js/master/dist/lg-pager.js"></script>
+        <script src="https://cdn.rawgit.com/sachinchoolur/lg-autoplay.js/master/dist/lg-autoplay.js"></script>
+        <script src="https://cdn.rawgit.com/sachinchoolur/lg-fullscreen.js/master/dist/lg-fullscreen.js"></script>
+        <script src="https://cdn.rawgit.com/sachinchoolur/lg-zoom.js/master/dist/lg-zoom.js"></script>
+        <script src="https://cdn.rawgit.com/sachinchoolur/lg-hash.js/master/dist/lg-hash.js"></script>
+        <script src="https://cdn.rawgit.com/sachinchoolur/lg-share.js/master/dist/lg-share.js"></script>
+        <script>
+            lightGallery(document.getElementById('ul-li'));
+        </script>
+    </body>
+</html>
