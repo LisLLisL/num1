@@ -182,7 +182,7 @@ div#loader { height: 25px; line-height: 25px; background: url(../images/flow/loa
 
 
 
-.showpage{ width:100%; overflow:hidden; background:#F2F2F2}
+.showpage{ width:100%; overflow:hidden; background:#F2F2F2; max-width: 640px;}
 
 
 /*头部样式*/
@@ -473,6 +473,8 @@ display: -webkit-box;}
 
 .bt_-20{ bottom:-20px; }
 
+.scrollimg img{width: 100%;}
+
 /*.pd-30{ padding-bottom: 30px; }*/
 
 
@@ -600,7 +602,6 @@ display: -webkit-box;}
 
 .medias_item img {
     width: 100%;
-    height: 120px;
     opacity: 1;
 }
 
