@@ -4,6 +4,7 @@ $(function(){
     loop: true,
     pagination: '.swiper-pagination1',
     autoplay : 5000,
+    autoplayDisableOnInteraction : false,
   })
 
   var mySwiper2 = new Swiper ('.swiper-container2', {
